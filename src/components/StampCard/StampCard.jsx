@@ -24,8 +24,7 @@ function StampCard({ quest, isRevealed }) {
         </div>
 
         <div className={styles.stampFooter}>
-          <span className={styles.footerText}>haven</span>
-          <span className={styles.footerDivider}>✦</span>
+              
           <span className={styles.footerText}>No. {quest.id}</span>
         </div>
 

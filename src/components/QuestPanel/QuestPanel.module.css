@@ -1,0 +1,140 @@
+.panel {
+    width: 100%;
+    max-width: 1500px;
+    background-color: white;
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    box-shadow: var(--shadow-soft);
+    border: 1.5px solid var(--cream-dark);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    transition: all 0.4s ease;
+  
+    /* Fade up animation */
+    animation: fadeUp 0.5s ease forwards;
+  }
+  
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .completed {
+    border-color: var(--sage);
+    background-color: #f9fbf6;
+  }
+  
+  /* ---- Top accent ---- */
+  .topAccent {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+  }
+  
+  .accentLine {
+    flex: 1;
+    height: 1px;
+    background-color: var(--cream-dark);
+  }
+  
+  .accentText {
+    font-family: var(--font-hand);
+    font-size: 0.85rem;
+    color: var(--text-light);
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+  }
+  
+  /* ---- Quest text ---- */
+  .title {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--text-dark);
+    line-height: 1.3;
+    text-align:center;
+  }
+  
+  .description {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--text-mid);
+    line-height: 1.8;
+    font-weight: 300;
+  }
+  
+  /* ---- Action buttons ---- */
+  .actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+  
+  .completeBtn {
+    width: 100%;
+    padding: var(--space-md);
+    background-color: var(--sage);
+    color: white;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    border-radius: 100px;
+    box-shadow: 0 4px 16px rgba(154, 177, 122, 0.3);
+    transition: all 0.25s ease;
+  }
+  
+  .completeBtn:hover {
+    background-color: var(--sage-dark);
+    transform: translateY(-2px);
+  }
+  
+  .completeBtn:active {
+    transform: translateY(0);
+  }
+  
+  .laterBtn {
+    width: 100%;
+    padding: var(--space-md);
+    background-color: transparent;
+    color: var(--text-light);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    letter-spacing: 0.04em;
+    border-radius: 100px;
+    border: 1.5px solid var(--cream-dark);
+    transition: all 0.25s ease;
+  }
+  
+  .laterBtn:hover {
+    border-color: var(--sage);
+    color: var(--sage);
+  }
+  
+  /* ---- Completed state ---- */
+  .completedMessage {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    background-color: rgba(154, 177, 122, 0.1);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(154, 177, 122, 0.3);
+  }
+  
+  .completedIcon {
+    font-size: 1.2rem;
+    color: var(--sage);
+  }
+  
+  .completedText {
+    font-family: var(--font-hand);
+    font-size: 1.1rem;
+    color: var(--sage-dark);
+  }

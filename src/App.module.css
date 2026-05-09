@@ -12,3 +12,12 @@
     justify-content: flex-start;
     padding:0;
   }
+  .revealLayout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xl);
+    padding: var(--space-xl) var(--space-xl);
+    width: 100%;
+    max-width: 1500px;
+  }
