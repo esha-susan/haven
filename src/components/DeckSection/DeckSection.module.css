@@ -1,0 +1,129 @@
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xl);
+    padding: var(--space-2xl) var(--space-xl);
+  }
+  
+  /* ---- Top text ---- */
+  .topText {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+  
+  .date {
+    font-family: var(--font-hand);
+    font-size: 1.1rem;
+    color: var(--sage);
+    letter-spacing: 0.06em;
+  }
+  
+  .heading {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--text-dark);
+    font-style: italic;
+  }
+  
+  .subtext {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-weight: 300;
+  }
+  
+  /* ---- Card Stack ---- */
+  .deckWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 220px;
+    height: 280px;
+  }
+  
+  .deckStack {
+    position: relative;
+    width: 180px;
+    height: 240px;
+  }
+  
+  /* Base card styles - stamp look */
+  .card {
+    position: absolute;
+    width: 180px;
+    height: 240px;
+    border-radius: var(--radius-sm);
+    background-color: var(--cream);
+    border: 2px solid var(--cream-dark);
+    box-shadow: var(--shadow-card);
+    background-image:
+      radial-gradient(circle, var(--peach) 3px, transparent 3px);
+    background-size: 12px 12px;
+    background-position: -6px -6px;
+  }
+  
+  .card1 {
+    top: 0;
+    left: 0;
+    z-index: 3;
+    transform: rotate(-2deg);
+    background-color: var(--cream);
+  }
+  
+  .card2 {
+    top: 10px;
+    left: 14px;
+    z-index: 2;
+    transform: rotate(4deg);
+    background-color: var(--soft-green);
+    opacity: 0.9;
+  }
+  
+  .card3 {
+    top: 18px;
+    left: 26px;
+    z-index: 1;
+    transform: rotate(-5deg);
+    background-color: var(--sage);
+    opacity: 0.75;
+  }
+  /* Hover wiggle on the whole stack */
+  .deckStack:hover .card1 {
+    transform: rotate(-2deg) translateY(-4px);
+    transition: transform 0.3s ease;
+  }
+  
+  .deckStack:hover .card2 {
+    transform: rotate(3deg) translateY(-2px);
+    transition: transform 0.3s ease;
+  }
+  
+  /* ---- Draw Button ---- */
+  .drawButton {
+    background-color: var(--sage);
+    color: white;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    padding: var(--space-md) var(--space-xl);
+    border-radius: 100px;
+    box-shadow: 0 4px 16px rgba(154, 177, 122, 0.35);
+    transition: all 0.25s ease;
+  }
+  
+  .drawButton:hover {
+    background-color: var(--sage-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(154, 177, 122, 0.45);
+  }
+  
+  .drawButton:active {
+    transform: translateY(0px);
+    box-shadow: 0 2px 8px rgba(154, 177, 122, 0.3);
+  }

@@ -1,0 +1,117 @@
+/* ---- Wrapper + Reveal Animation ---- */
+.stampWrapper {
+    opacity: 0;
+    transform: translateY(24px) scale(0.96);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+  .revealed {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  
+  /* ---- The Stamp ---- */
+  .stamp {
+    width: 220px;
+    background-color: var(--cream);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  
+    /* Outer stamp border */
+    outline: 8px solid var(--cream);
+    outline-offset: -8px;
+  
+    /* Perforated edge simulation */
+    border: 2px solid var(--cream-dark);
+    position: relative;
+  }
+  
+  /* Perforated dots around stamp edge */
+  .perforation {
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-sm);
+    background-image:
+      radial-gradient(circle, var(--peach) 2.5px, transparent 2.5px);
+    background-size: 10px 10px;
+    background-position: -5px -5px;
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  /* ---- Image Area ---- */
+  .imageArea {
+    width: calc(100% - 24px);
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    background-color: var(--soft-green);
+    margin: 12px auto 0 auto;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+  .stampImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  /* ---- Placeholder (before Canva images are ready) ---- */
+  .placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    padding: var(--space-md);
+    background: linear-gradient(
+      135deg,
+      var(--soft-green) 0%,
+      var(--cream) 100%
+    );
+  }
+  
+  .placeholderIcon {
+    font-size: 2rem;
+    color: var(--sage);
+    opacity: 0.6;
+  }
+  
+  .placeholderText {
+    font-family: var(--font-hand);
+    font-size: 1rem;
+    color: var(--text-mid);
+    text-align: center;
+    line-height: 1.4;
+  }
+  
+  /* ---- Stamp Footer ---- */
+  .stampFooter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-md);
+    background-color: var(--sage);
+    position: relative;
+    z-index: 1;
+  }
+  
+  .footerText {
+    font-family: var(--font-hand);
+    font-size: 0.8rem;
+    color: white;
+    letter-spacing: 0.08em;
+  }
+  
+  .footerDivider {
+    font-size: 0.6rem;
+    color: rgba(255, 255, 255, 0.6);
+  }

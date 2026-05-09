@@ -1,0 +1,43 @@
+.header {
+    width: 100%;
+    padding: var(--space-lg) var(--space-xl);
+    background-color: transparent;
+    border-bottom: 1.5px dashed var(--cream-dark);
+  }
+  
+  .inner {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-lg);
+  }
+  
+  .titles {
+    text-align: center;
+  }
+  
+  .logo {
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: var(--text-dark);
+    letter-spacing: 0.12em;
+    line-height: 1;
+  }
+  
+  .tagline {
+    font-family: var(--font-hand);
+    font-size: 1rem;
+    color: var(--text-light);
+    margin-top: var(--space-xs);
+    letter-spacing: 0.04em;
+  }
+  
+  .stamp {
+    font-size: 1.1rem;
+    color: var(--sage);
+    opacity: 0.7;
+    user-select: none;
+  }
