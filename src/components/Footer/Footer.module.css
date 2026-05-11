@@ -1,0 +1,14 @@
+.footer {
+    width: 100%;
+    padding: var(--space-lg) var(--space-xl);
+    border-top: 1.5px dashed var(--cream-dark);
+    text-align: center;
+    margin-top: auto;
+  }
+  
+  .text {
+    font-family: var(--font-hand);
+    font-size: 0.85rem;
+    color: var(--text-light);
+    letter-spacing: 0.06em;
+  }

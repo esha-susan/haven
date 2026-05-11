@@ -2,16 +2,19 @@ import Header from './components/Header/Header'
 import DeckSection from './components/DeckSection/DeckSection'
 import StampCard from './components/StampCard/StampCard'
 import QuestPanel from './components/QuestPanel/QuestPanel'
+import DailyLockMessage from './components/DailyLockMessage/DailyLockMessage'
+import Footer from './components/Footer/Footer'
 import useDailyQuest from './hooks/useDailyQuest'
 import styles from './App.module.css'
-import DailyLockMessage from './components/DailyLockMessage/DailyLockMessage'
 
 function App() {
   const {
+    phase,
+    fourQuests,
     drawnQuest,
-    isRevealed,
     isCompleted,
-    handleDraw,
+    handleShuffle,
+    handleCardPick,
     handleComplete,
     handleSaveLater,
   } = useDailyQuest()
@@ -20,21 +23,31 @@ function App() {
     <div className={styles.app}>
       <Header />
       <main className={styles.main}>
-        {!drawnQuest ? (
-          <DeckSection onDraw={handleDraw} />
-        ) : (
+
+        {(phase === 'idle' || phase === 'selecting') && (
+          <DeckSection
+            phase={phase}
+            fourQuests={fourQuests}
+            onShuffle={handleShuffle}
+            onCardPick={handleCardPick}
+          />
+        )}
+
+        {(phase === 'revealed' || phase === 'completed') && drawnQuest && (
           <div className={styles.revealLayout}>
-            <StampCard quest={drawnQuest} isRevealed={isRevealed} />
+            <StampCard quest={drawnQuest} isRevealed={true} />
             <QuestPanel
               quest={drawnQuest}
               isCompleted={isCompleted}
               onComplete={handleComplete}
               onSaveLater={handleSaveLater}
             />
-            {isCompleted&&<DailyLockMessage/>}
+            {phase === 'completed' && <DailyLockMessage />}
           </div>
         )}
+
       </main>
+      <Footer />
     </div>
   )
 }
