@@ -12,30 +12,30 @@ function pickFourQuests(excludeId) {
 }
 
 function useDailyQuest() {
-  const [phase, setPhase]           = useState('idle')
-  // phases: 'idle' | 'selecting' | 'revealed' | 'completed'
-
-  const [fourQuests, setFourQuests] = useState([])
-  const [drawnQuest, setDrawnQuest] = useState(null)
-  const [isCompleted, setIsCompleted] = useState(false)
+  const [phase, setPhase]               = useState('idle')
+  const [fourQuests, setFourQuests]     = useState([])
+  const [drawnQuest, setDrawnQuest]     = useState(null)
+  const [isCompleted, setIsCompleted]   = useState(false)
+  const [isSavedLater, setIsSavedLater] = useState(false)
 
   useEffect(() => {
-    const lastDrawDate   = localStorage.getItem('lastDrawDate')
-    const todayQuestId   = localStorage.getItem('todayQuestId')
-    const todayCompleted = localStorage.getItem('todayCompleted')
-    const today          = getTodayString()
+    const lastDrawDate    = localStorage.getItem('lastDrawDate')
+    const todayQuestId    = localStorage.getItem('todayQuestId')
+    const todayCompleted  = localStorage.getItem('todayCompleted')
+    const todaySavedLater = localStorage.getItem('todaySavedLater')
+    const today           = getTodayString()
 
     if (lastDrawDate === today && todayQuestId) {
       const quest = quests.find(q => q.id === Number(todayQuestId))
       if (quest) {
         setDrawnQuest(quest)
         setIsCompleted(todayCompleted === 'true')
+        setIsSavedLater(todaySavedLater === 'true')
         setPhase(todayCompleted === 'true' ? 'completed' : 'revealed')
       }
     }
   }, [])
 
-  // User clicks Shuffle
   function handleShuffle() {
     const lastQuestId = Number(localStorage.getItem('lastQuestId')) || null
     const four = pickFourQuests(lastQuestId)
@@ -45,24 +45,29 @@ function useDailyQuest() {
 
   function handleCardPick(quest) {
     const today = getTodayString()
-
-    localStorage.setItem('lastDrawDate',   today)
-    localStorage.setItem('todayQuestId',   String(quest.id))
-    localStorage.setItem('todayCompleted', 'false')
-    localStorage.setItem('lastQuestId',    String(quest.id))
-
+    localStorage.setItem('lastDrawDate',    today)
+    localStorage.setItem('todayQuestId',    String(quest.id))
+    localStorage.setItem('todayCompleted',  'false')
+    localStorage.setItem('todaySavedLater', 'false')
+    localStorage.setItem('lastQuestId',     String(quest.id))
     setDrawnQuest(quest)
+    setIsSavedLater(false)
+    setIsCompleted(false)
     setPhase('revealed')
   }
 
   function handleComplete() {
-    localStorage.setItem('todayCompleted', 'true')
+    localStorage.setItem('todayCompleted',  'true')
+    localStorage.setItem('todaySavedLater', 'false')
     setIsCompleted(true)
+    setIsSavedLater(false)
     setPhase('completed')
   }
 
   function handleSaveLater() {
-    console.log('Saved for later')
+    localStorage.setItem('todayCompleted',  'false')
+    localStorage.setItem('todaySavedLater', 'true')
+    setIsSavedLater(true)
   }
 
   return {
@@ -70,6 +75,7 @@ function useDailyQuest() {
     fourQuests,
     drawnQuest,
     isCompleted,
+    isSavedLater,
     handleShuffle,
     handleCardPick,
     handleComplete,

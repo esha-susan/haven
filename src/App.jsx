@@ -17,6 +17,7 @@ function App() {
     fourQuests,
     drawnQuest,
     isCompleted,
+    isSavedLater,
     handleShuffle,
     handleCardPick,
     handleComplete,
@@ -31,6 +32,7 @@ function App() {
     <div className={styles.app}>
       <Header />
       <main className={styles.main}>
+
         {(phase === 'idle' || phase === 'selecting') && (
           <DeckSection
             phase={phase}
@@ -39,18 +41,21 @@ function App() {
             onCardPick={handleCardPick}
           />
         )}
+
         {(phase === 'revealed' || phase === 'completed') && drawnQuest && (
           <div className={styles.revealLayout}>
             <StampCard quest={drawnQuest} isRevealed={true} />
             <QuestPanel
               quest={drawnQuest}
               isCompleted={isCompleted}
+              isSavedLater={isSavedLater}
               onComplete={handleComplete}
               onSaveLater={handleSaveLater}
             />
             {phase === 'completed' && <DailyLockMessage />}
           </div>
         )}
+
       </main>
       <Footer />
     </div>
