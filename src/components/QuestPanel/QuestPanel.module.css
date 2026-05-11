@@ -121,6 +121,7 @@
   .completedMessage {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: var(--space-md);
     padding: var(--space-md);
     background-color: rgba(154, 177, 122, 0.1);
@@ -137,4 +138,5 @@
     font-family: var(--font-hand);
     font-size: 1.1rem;
     color: var(--sage-dark);
+    
   }

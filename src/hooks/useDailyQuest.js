@@ -5,12 +5,19 @@ function getTodayString() {
   return new Date().toISOString().slice(0, 10)
 }
 
-function useDailyQuest() {
+function pickFourQuests(excludeId) {
+  const pool = quests.filter(q => q.id !== excludeId)
+  const shuffled = [...pool].sort(() => Math.random() - 0.5)
+  return shuffled.slice(0, 4)
+}
 
-  const [drawnQuest, setDrawnQuest]     = useState(null)
-  const [isRevealed, setIsRevealed]     = useState(false)
-  const [isCompleted, setIsCompleted]   = useState(false)
-  const [alreadyDrawn, setAlreadyDrawn] = useState(false)
+function useDailyQuest() {
+  const [phase, setPhase]           = useState('idle')
+  // phases: 'idle' | 'selecting' | 'revealed' | 'completed'
+
+  const [fourQuests, setFourQuests] = useState([])
+  const [drawnQuest, setDrawnQuest] = useState(null)
+  const [isCompleted, setIsCompleted] = useState(false)
 
   useEffect(() => {
     const lastDrawDate   = localStorage.getItem('lastDrawDate')
@@ -20,49 +27,51 @@ function useDailyQuest() {
 
     if (lastDrawDate === today && todayQuestId) {
       const quest = quests.find(q => q.id === Number(todayQuestId))
-
       if (quest) {
         setDrawnQuest(quest)
-        setIsRevealed(true)
-        setAlreadyDrawn(true)
         setIsCompleted(todayCompleted === 'true')
+        setPhase(todayCompleted === 'true' ? 'completed' : 'revealed')
       }
     }
-  }, []) 
+  }, [])
 
-  function handleDraw() {
-    const today       = getTodayString()
-    const randomIndex = Math.floor(Math.random() * quests.length)
-    const quest       = quests[randomIndex]
+  // User clicks Shuffle
+  function handleShuffle() {
+    const lastQuestId = Number(localStorage.getItem('lastQuestId')) || null
+    const four = pickFourQuests(lastQuestId)
+    setFourQuests(four)
+    setPhase('selecting')
+  }
 
-    localStorage.setItem('lastDrawDate', today)
-    localStorage.setItem('todayQuestId', String(quest.id))
+  function handleCardPick(quest) {
+    const today = getTodayString()
+
+    localStorage.setItem('lastDrawDate',   today)
+    localStorage.setItem('todayQuestId',   String(quest.id))
     localStorage.setItem('todayCompleted', 'false')
+    localStorage.setItem('lastQuestId',    String(quest.id))
 
     setDrawnQuest(quest)
-    setAlreadyDrawn(true)
-
-    setTimeout(() => {
-      setIsRevealed(true)
-    }, 100)
+    setPhase('revealed')
   }
 
   function handleComplete() {
     localStorage.setItem('todayCompleted', 'true')
     setIsCompleted(true)
+    setPhase('completed')
   }
 
   function handleSaveLater() {
-    
-    console.log('Keeping for later')
+    console.log('Saved for later')
   }
 
   return {
+    phase,
+    fourQuests,
     drawnQuest,
-    isRevealed,
     isCompleted,
-    alreadyDrawn,
-    handleDraw,
+    handleShuffle,
+    handleCardPick,
     handleComplete,
     handleSaveLater,
   }

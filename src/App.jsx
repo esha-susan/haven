@@ -4,6 +4,7 @@ import StampCard from './components/StampCard/StampCard'
 import QuestPanel from './components/QuestPanel/QuestPanel'
 import useDailyQuest from './hooks/useDailyQuest'
 import styles from './App.module.css'
+import DailyLockMessage from './components/DailyLockMessage/DailyLockMessage'
 
 function App() {
   const {
@@ -30,6 +31,7 @@ function App() {
               onComplete={handleComplete}
               onSaveLater={handleSaveLater}
             />
+            {isCompleted&&<DailyLockMessage/>}
           </div>
         )}
       </main>
