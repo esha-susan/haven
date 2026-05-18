@@ -7,7 +7,6 @@ function Header() {
         <span className={styles.stamp}>✦</span>
         <div className={styles.titles}>
           <h1 className={styles.logo}>haven</h1>
-          <p className={styles.tagline}>one small quest, every day</p>
         </div>
         <span className={styles.stamp}>✦</span>
       </div>

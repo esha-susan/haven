@@ -4,7 +4,7 @@ function Footer() {
   return (
     <footer className={styles.footer}>
       <p className={styles.text}>
-        haven ✦ one small quest, every day
+      For wanderers, dreamers, and doers
       </p>
     </footer>
   )

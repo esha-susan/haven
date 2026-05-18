@@ -34,8 +34,8 @@ function SplashScreen({ onComplete }) {
           <span className={styles.flourishDiamond} />
           <span className={styles.flourishLine} />
         </div>
-        <p className={styles.tagline}>one small quest, every day</p>
-        <p className={styles.note}>your quest awaits...</p>
+        <p className={styles.tagline}>One small quest, Every day</p>
+        
       </div>
 
       <div className={styles.progressTrack}>

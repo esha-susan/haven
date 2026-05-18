@@ -32,10 +32,9 @@ function QuestPanel({ quest, isCompleted, isSavedLater, onComplete, onSaveLater 
         </div>
       ) : (
         <div className={styles.savedMessage}>
-          <span className={styles.completedIcon}>✦</span>
+          
           <p className={styles.completedText}>
-            We'll bring it back around. Rest for now — your quest will find you again tomorrow.
-          </p>
+            This adventure can wait — it knows the way back to you.          </p>
         </div>
       )}
 

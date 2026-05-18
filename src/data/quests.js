@@ -1,107 +1,107 @@
 const quests = [
   {
     id: 1,
-    title: "The Golden Hour Walk",
+    title: "The Sunlit Wander",
     description:
-      "Step outside within the next hour and walk for at least 10 minutes with no destination in mind. Leave your earphones behind. Notice three things you've never paid attention to before — a texture, a sound, a colour. Come back and write them down somewhere.",
+      "Before the light changes, step outside and walk for at least ten minutes with nowhere in particular to be. Leave your earphones behind. Notice three things that usually escape your attention — a texture, a sound, a colour quietly waiting to be seen. Carry them home with you. Write them down somewhere safe.",
     stamp: "stamp_01.png",
   },
   {
     id: 2,
-    title: "Letter to Future You",
+    title: "A Letter Across Time",
     description:
-      "Write a short letter to yourself six months from now. It doesn't need to be deep. Tell them what you're working on, what you're hoping for, and one small thing that made you smile this week. Seal it in your notes app or a real envelope.",
+      "Write a short letter to the version of you waiting six months ahead. Tell them what you are building, what you are hoping for, and one small thing that softened your week. It doesn't need to be profound. Seal it away in your notes app, a journal, or a real envelope. Let tomorrow discover it later.",
     stamp: "stamp_02.png",
   },
   {
     id: 3,
-    title: "The One Drawer",
+    title: "The Forgotten Corner",
     description:
-      "Pick exactly one drawer, shelf, or corner that has been quietly bothering you. Spend 15 minutes — no more, no less — sorting it out. Put on a playlist first. Notice how satisfying a small act of order feels.",
+      "Choose exactly one drawer, shelf, or neglected corner that has been quietly asking for your attention. Spend fifteen minutes — no more, no less — bringing a little order back to it. Put on a playlist if you wish. Notice how strangely satisfying it feels to restore a tiny piece of your world.",
     stamp: "stamp_03.png",
   },
   {
     id: 4,
-    title: "Make Something with Your Hands",
+    title: "The Maker's Ritual",
     description:
-      "Cook a new recipe, fold an origami shape, sketch something badly on purpose, or rearrange objects on your desk into something that pleases you. The goal is to make something physical that didn't exist this morning.",
+      "Create something with your hands today. Cook something unfamiliar, fold paper into improbable shapes, sketch badly on purpose, or rearrange ordinary objects into accidental art. The goal is not beauty or skill. The goal is simple: make something tangible that did not exist when the day began.",
     stamp: "stamp_04.png",
   },
   {
     id: 5,
-    title: "The Kindness Errand",
+    title: "The Quiet Offering",
     description:
-      "Do one small thing for someone without being asked. It could be making tea for someone at home, sending a voice note to a friend you haven't spoken to in a while, or leaving a genuine compliment somewhere online. Anonymous is fine.",
+      "Do one small kindness without being asked. A cup of tea, a message sent first, a sincere compliment, a gentle gesture no one expects. Anonymous kindness counts. Quiet kindness counts too. Offer something small to the world today and ask for nothing in return.",
     stamp: "stamp_05.png",
   },
   {
     id: 6,
-    title: "Digital Sunset",
+    title: "The Lantern Hour",
     description:
-      "Pick one hour today — any hour — and put your phone face down. No checking. Use that hour for something that has nothing to do with a screen. Read, stretch, stare out the window, make tea slowly. Notice how the hour feels different.",
+      "Choose one hour today and let your phone fall silent. No checking. No glowing screens asking for pieces of your attention. Spend the hour elsewhere — reading, stretching, making tea slowly, staring out a window like it owes you a story. Notice how differently time moves when nothing is demanding to be consumed.",
     stamp: "stamp_06.png",
   },
   {
     id: 7,
-    title: "The Comfort Recipe",
+    title: "The Hearth Feast",
     description:
-      "Cook or prepare something you genuinely love eating. Not for nutrition, not for health — purely for comfort and pleasure. Take your time with it. Eat it without scrolling. Pay attention to every bite.",
+      "Prepare something you genuinely love eating. Not for discipline, not for nutrition, not because you should. Only for comfort and pleasure. Take your time making it. Eat without scrolling or multitasking. Let yourself enjoy something fully, as if nourishment could also be a ceremony.",
     stamp: "stamp_07.png",
   },
   {
     id: 8,
-    title: "Conversation Worth Having",
+    title: "The Rekindled Thread",
     description:
-      "Call or message someone you've been meaning to reach out to. Not a quick reply — an actual conversation. Ask them one question you genuinely want the answer to. Listen more than you speak.",
+      "Reach out to someone you've been meaning to speak to. Not a quick reaction or a passing reply — an actual conversation. Ask one question you genuinely want the answer to. Listen closely. Some connections do not disappear; they simply wait for someone to tug gently on the thread again.",
     stamp: "stamp_08.png",
   },
   {
     id: 9,
-    title: "The Slow Morning",
+    title: "Borrowed Morninglight",
     description:
-      "Tomorrow morning, set your alarm 30 minutes earlier than usual. Use that time with no agenda — no phone, no plans. Just tea, quiet, and whatever feels right. Notice how it shapes the rest of your day.",
+      "Tomorrow morning, wake a little earlier than usual and keep the extra time unclaimed. No phone. No agenda. Just quiet, tea, sunlight, music, or whatever gentleness finds you first. Notice what it feels like to begin a day without immediately rushing to belong to it.",
     stamp: "stamp_09.png",
   },
   {
     id: 10,
-    title: "Learn One Small Thing",
+    title: "The Oracle of Small Things",
     description:
-      "Pick something tiny you've always been vaguely curious about and spend 20 minutes actually learning it. Not a skill — just a fact, a history, a how-something-works. Let yourself be genuinely interested without any practical reason.",
+      "Choose something you have always been vaguely curious about and spend twenty minutes following the thread. A strange fact. A forgotten history. A machine you never understood. Learn it for no practical reason whatsoever. Curiosity does not always need to justify its existence.",
     stamp: "stamp_10.png",
   },
   {
     id: 11,
-    title: "The Gratitude Inventory",
+    title: "The Inventory of Small Blessings",
     description:
-      "Sit somewhere quiet and write down five things you're grateful for — but not the obvious ones. Go specific. Not 'my family' but 'the way my mother laughs at her own jokes'. Specificity is where gratitude actually lives.",
+      "Sit somewhere quiet and write down five things you are grateful for — but avoid the obvious answers. Be specific. Not 'my family' but 'the way someone laughs at their own jokes'. Small details hold more magic than grand declarations. Gratitude often lives in places we nearly forget to notice.",
     stamp: "stamp_11.png",
   },
   {
     id: 12,
-    title: "Move for Joy",
+    title: "The Joyful Motion Spell",
     description:
-      "Do 20 minutes of movement that you actually enjoy — not what you think you should do. Dance badly in your room, take the long way somewhere, do stretches on your floor. Movement doesn't have to be exercise to count.",
+      "Move in a way that feels alive rather than obligated. Dance badly in your room, stretch dramatically on the floor, walk the longer route somewhere, or invent your own version of movement entirely. Exercise is not the assignment here. Joy is.",
     stamp: "stamp_12.png",
   },
   {
     id: 13,
-    title: "The Unfinished Thing",
+    title: "The Ritual of Returning",
     description:
-      "You have something unfinished sitting quietly in the back of your mind. A book half-read, a project paused, a message drafted. Today, give it 25 minutes. Just 25. You don't have to finish it — just return to it.",
+      "There is something unfinished waiting quietly for your attention — a book half-read, a paused project, a message still drafted. Today, give it twenty-five minutes. You do not need to finish it. You only need to return to it. Sometimes progress begins with remembering that something once mattered to you.",
     stamp: "stamp_13.png",
   },
   {
     id: 14,
-    title: "Outside Your Algorithm",
+    title: "Beyond the Machine's Guess",
     description:
-      "Find something creative to consume that your phone would never recommend to you. A genre of music you've never tried, a film from a country you know nothing about, a poet you've never heard of. Let yourself be surprised.",
+      "Find something creative your algorithm would never hand you. A genre of music you've never touched, a film from a country you know nothing about, a poet you've never heard of. Let surprise choose for you today. Wander beyond the borders of what your screen thinks you already are.",
     stamp: "stamp_14.png",
   },
   {
     id: 15,
-    title: "The Permission Slip",
+    title: "The Gentle Decree",
     description:
-      "Write yourself a permission slip for something small you've been denying yourself — rest, an indulgence, saying no to something. Sign it. Then actually honour it today. You don't need to earn rest. You don't need to justify joy.",
+      "Write yourself permission for something small you have been withholding — rest, softness, saying no, choosing joy without explanation. Sign it like an official document from a kinder universe. Then honour it today. You do not need to earn every good thing before allowing yourself to receive it.",
     stamp: "stamp_15.png",
   },
 ]
